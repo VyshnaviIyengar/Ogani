@@ -246,126 +246,172 @@
     <!-- Breadcrumb Section End -->
 
     <!-- Shoping Cart Section Begin -->
-    <section class="shoping-cart spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="shoping__cart__table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th class="shoping__product">Products</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="shoping__cart__item">
-                                        <img src="img/cart/cart-1.jpg" alt="">
-                                        <h5>Vegetable’s Package</h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        Rs 155.00
-                                    </td>
-                                    <td class="shoping__cart__quantity">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="shoping__cart__total">
-                                        Rs 155.00
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="shoping__cart__item">
-                                        <img src="img/cart/cart-2.jpg" alt="">
-                                        <h5>Fresh Garden Vegetable</h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        Rs 390.00
-                                    </td>
-                                    <td class="shoping__cart__quantity">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="shoping__cart__total">
-                                        Rs 390.00
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="shoping__cart__item">
-                                        <img src="img/cart/cart-3.jpg" alt="">
-                                        <h5>Organic Bananas</h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        Rs 69.00
-                                    </td>
-                                    <td class="shoping__cart__quantity">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="shoping__cart__total">
-                                        Rs 69.00
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="shoping__cart__btns">
-                        <a href="#" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
-                        <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
-                            Upadate Cart</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="shoping__continue">
-                        <div class="shoping__discount">
-                            <h5>Discount Codes</h5>
-                            <form action="#">
-                                <input type="text" placeholder="Enter your coupon code">
-                                <button type="submit" class="site-btn">APPLY COUPON</button>
-                            </form>
+   <section class="shoping-cart spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="shoping__cart__table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="shoping__product">Products</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cart-items">
+                                    <!-- Cart items will be injected here by JavaScript -->
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="shoping__checkout">
-                        <h5>Cart Total</h5>
-                        <ul>
-                            <li>Subtotal <span>Rs 454.98</span></li>
-                            <li>Total <span>Rs 454.98</span></li>
-                        </ul>
-                        <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="shoping__cart__btns">
+                            <a href="#" class="primary-btn cart-btn">CONTINUE SHOPPING</a>
+                            <a href="#" class="primary-btn cart-btn cart-btn-right" onclick="updateCart()">
+                                <span class="icon_loading"></span>
+                                Update Cart
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="shoping__continue">
+                            <div class="shoping__discount">
+                                <h5>Discount Codes</h5>
+                                <form action="#">
+                                    <input type="text" placeholder="Enter your coupon code">
+                                    <button type="submit" class="site-btn">APPLY COUPON</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="shoping__checkout">
+                            <h5>Cart Total</h5>
+                            <ul>
+                                <li>Subtotal <span id="subtotal">Rs 0.00</span></li>
+                                <li>Total <span id="total">Rs 0.00</span></li>
+                            </ul>
+                            <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Shoping Cart Section End -->
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                // Sample cart items
+                const sampleCartItems = [
+                    { id: 'cart-1', name: "Vegetable's Package", price: 55.00, quantity: 2 },
+                    { id: 'cart-2', name: "Fresh Garden Vegetable", price: 39.00, quantity: 1 },
+                    { id: 'cart-3', name: "Organic Bananas", price: 69.00, quantity: 1 },
+                ];
+
+                // Get the cart items from local storage or use sample items if empty
+                let cartItems = JSON.parse(localStorage.getItem("cartItems")) || sampleCartItems;
+
+                // Function to update the cart items
+                function updateCartItems() {
+                    let cartItemsHtml = "";
+                    let subtotal = 0;
+
+                    // Loop through the cart items
+                    cartItems.forEach(item => {
+                        // Calculate the item total
+                        const itemTotal = item.price * item.quantity;
+
+                        // Add the item to the cart items HTML
+                        cartItemsHtml += `
+                                <tr>
+                                    <td class="shoping__cart__item">
+                                        <img src="img/cart/${item.id}.jpg" alt="${item.name}">
+                                        <h5>${item.name}</h5>
+                                    </td>
+                                    <td class="shoping__cart__price">
+                                        Rs ${item.price.toFixed(2)}
+                                    </td>
+                                    <td class="shoping__cart__quantity">
+                                        <div class="quantity">
+                                            <div class="pro-qty">
+                                                <input type="number" value="${item.quantity}" data-price="${item.price}" data-product-id="${item.id}">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="shoping__cart__total">
+                                        Rs <span id="item-total-${item.id}">${itemTotal.toFixed(2)}</span>
+                                    </td>
+                                    <td class="shoping__cart__item__close">
+                                        <span class="icon_close" data-product-id="${item.id}"></span>
+                                    </td>
+                                </tr>
+                            `;
+
+                        // Add the item total to the subtotal
+                        subtotal += itemTotal;
+                    });
+
+                    // Update the cart items HTML
+                    document.getElementById("cart-items").innerHTML = cartItemsHtml;
+
+                    // Update the subtotal and total
+                    document.getElementById("subtotal").innerHTML = "Rs " + subtotal.toFixed(2);
+                    document.getElementById("total").innerHTML = "Rs " + subtotal.toFixed(2);
+
+                    // Attach event listeners to quantity inputs
+                    const quantityInputs = document.querySelectorAll(".pro-qty input");
+                    quantityInputs.forEach(input => input.addEventListener("change", updateCart));
+
+                    // Attach event listeners to close icons
+                    const closeIcons = document.querySelectorAll(".shoping__cart__item__close .icon_close");
+                    closeIcons.forEach(icon => icon.addEventListener("click", () => {
+                        const productId = icon.getAttribute("data-product-id");
+                        removeItem(productId);
+                    }));
+                }
+
+                // Function to update the cart when the quantity changes
+                function updateCart(event) {
+                    const input = event.target;
+                    const price = parseFloat(input.getAttribute("data-price"));
+                    const productId = input.getAttribute("data-product-id");
+                    const quantity = parseInt(input.value);
+
+                    // Find the item in the cart
+                    let item = cartItems.find(item => item.id == productId);
+
+                    // If the item exists, update the quantity and total
+                    if (item) {
+                        item.quantity = quantity;
+                    }
+
+                    // Update the local storage
+                    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+                    // Update the cart items
+                    updateCartItems();
+                }
+
+                // Function to remove an item from the cart
+                function removeItem(productId) {
+                    // Remove the item from the cart
+                    cartItems = cartItems.filter(item => item.id != productId);
+
+                    // Update the local storage
+                    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+                    // Update the cart items
+                    updateCartItems();
+                }
+
+                // Initial call to updateCartItems to populate the cart on page load
+                updateCartItems();
+            });
+        </script>
 
     <!-- Footer Section Begin -->
     <footer class="footer spad">
